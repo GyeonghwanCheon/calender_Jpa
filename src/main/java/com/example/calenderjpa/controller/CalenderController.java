@@ -35,30 +35,30 @@ public class CalenderController {
         return new ResponseEntity<>(calenderResponseDtoList, HttpStatus.OK);
     }
 
-    //일정 단건 조회
-    @GetMapping("/{id}")
-    public ResponseEntity<CalenderResponseDto> findById(@PathVariable Long id) {
-        CalenderResponseDto calenderResponseDto = calenderService.findById(id);
+//    //일정 단건 조회
+//    @GetMapping("/{id}")
+//    public ResponseEntity<CalenderResponseDto> findById(@PathVariable Long id) {
+//        CalenderResponseDto calenderResponseDto = calenderService.findById(id);
+//
+//        return new ResponseEntity<>(calenderResponseDto, HttpStatus.OK);
+//    }
 
-        return new ResponseEntity<>(calenderResponseDto, HttpStatus.OK);
-    }
+//    //일정 수정
+//    @PatchMapping("/{id}")
+//    public ResponseEntity<Void> updateCalender(@PathVariable Long id, @RequestBody CalenderRequestDto requestDto) {
+//
+//        calenderService.updateCalender(id, requestDto.getTitle(), requestDto.getContents());
+//
+//        return new ResponseEntity<>(HttpStatus.OK);
+//    }
 
-    //일정 수정
-    @PatchMapping("/{id}")
-    public ResponseEntity<Void> updateCalender(@PathVariable Long id, @RequestBody CalenderRequestDto requestDto) {
-
-        calenderService.updateCalender(id, requestDto.getTitle(), requestDto.getContents());
-
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
-
-    // 선택 일정 삭제
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id) {
-        calenderService.delete(id);
-
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
+//    // 선택 일정 삭제
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity<Void> delete(@PathVariable Long id) {
+//        calenderService.delete(id);
+//
+//        return new ResponseEntity<>(HttpStatus.OK);
+//    }
 
 
 }

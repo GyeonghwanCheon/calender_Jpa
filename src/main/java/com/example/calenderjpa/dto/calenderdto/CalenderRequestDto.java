@@ -5,6 +5,7 @@ import lombok.Getter;
 @Getter
 public class CalenderRequestDto {
 
+    // 어떤 회원이 작성했는지 정보를 담기 위해
     private final String username;
 
     private final String title;

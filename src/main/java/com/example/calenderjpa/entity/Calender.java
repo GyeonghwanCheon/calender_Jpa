@@ -12,17 +12,16 @@ public class Calender extends BaseEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true)
-    private String username;
-
     private String title;
 
     @Column(columnDefinition = "longtext")
     private String contents;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
-    public Calender(String username, String contents, String title) {
-        this.username = username;
+    public Calender(String contents, String title) {
         this.contents = contents;
         this.title = title;
     }
@@ -30,6 +29,10 @@ public class Calender extends BaseEntity{
     public void updateCalender(String title, String contents) {
         this.title = title;
         this.contents = contents;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Calender() {

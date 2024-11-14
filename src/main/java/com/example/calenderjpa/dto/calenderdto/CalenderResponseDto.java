@@ -1,6 +1,7 @@
 package com.example.calenderjpa.dto.calenderdto;
 
 import com.example.calenderjpa.entity.Calender;
+import com.example.calenderjpa.entity.User;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
@@ -10,7 +11,7 @@ public class CalenderResponseDto {
 
     private final Long id; //식별자 id
 
-    private final String username; //작성 유저명
+    private final String username; // 작성자
 
     private final String title; //할일 제목
 
@@ -22,7 +23,8 @@ public class CalenderResponseDto {
 
 
 
-    public CalenderResponseDto(Long id, String username, String title, String contents, LocalDateTime createAt, LocalDateTime modifiedAt) {
+    public CalenderResponseDto(Long id, String username ,String title, String contents, LocalDateTime createAt, LocalDateTime modifiedAt) {
+
         this.id = id;
         this.username = username;
         this.title = title;
@@ -32,6 +34,9 @@ public class CalenderResponseDto {
     }
 
     public static CalenderResponseDto toDto(Calender calender) {
-        return new CalenderResponseDto(calender.getId(), calender.getUsername(), calender.getTitle(), calender.getContents(), calender.getCreateAt(), calender.getModifiedAt());
+
+        User writer = calender.getUser();
+
+        return new CalenderResponseDto(calender.getId(), writer.getUsername(), calender.getTitle(), calender.getContents(), calender.getCreateAt(), calender.getModifiedAt());
     }
 }
