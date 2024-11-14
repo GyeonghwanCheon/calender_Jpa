@@ -31,7 +31,12 @@ public class CalenderService {
         return calenderRepository.findAll().stream().map(CalenderResponseDto::toDto).toList();
     }
 
-    
 
+    public CalenderResponseDto findById(Long id) {
+        Calender findCalender = calenderRepository.findByIdOrElseThrow(id);
 
+        return new CalenderResponseDto(
+                findCalender.getId() ,findCalender.getUsername(), findCalender.getTitle(),
+                findCalender.getContents(), findCalender.getCreateAt(), findCalender.getModifiedAt());
+    }
 }
