@@ -1,5 +1,6 @@
 package com.example.calenderjpa.dto.userdto;
 
+import com.example.calenderjpa.entity.User;
 import lombok.Getter;
 
 @Getter
@@ -12,4 +13,5 @@ public class UserResopnseDto {
         this.username = username;
         this.email = email;
     }
+
 }
