@@ -44,14 +44,16 @@ public class CalenderService {
     }
 
 
-//    // 일정 단건 조회
-//    public CalenderResponseDto findById(Long id) {
-//        Calender findCalender = calenderRepository.findByIdOrElseThrow(id);
-//
-//        return new CalenderResponseDto(
-//                findCalender.getId() ,findCalender.getUsername(), findCalender.getTitle(),
-//                findCalender.getContents(), findCalender.getCreateAt(), findCalender.getModifiedAt());
-//    }
+    // 일정 단건 조회
+    public CalenderResponseDto findById(Long id) {
+        Calender findCalender = calenderRepository.findByIdOrElseThrow(id);
+
+        User writer = findCalender.getUser();
+
+        return new CalenderResponseDto(
+                findCalender.getId() ,writer.getUsername(), findCalender.getTitle(),
+                findCalender.getContents(), findCalender.getCreateAt(), findCalender.getModifiedAt());
+    }
 
 //    // 일정 수정(제목과 내용만 수정)
 //    @Transactional
