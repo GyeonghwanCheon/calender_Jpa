@@ -27,11 +27,11 @@ public class CalenderController {
         return new ResponseEntity<>(calenderResponseDto, HttpStatus.CREATED);
     }
 
-//    //일정 전체 조회
-//    @GetMapping
-//    public ResponseEntity<List<CalenderResponseDto>> findAll() {
-//        List<CalenderResponseDto> calenderResponseDtoList = calenderService.findAll();
-//
-//        return new ResponseEntity<>(calenderResponseDtoList, HttpStatus.OK);
-//    }
+    //일정 전체 조회
+    @GetMapping
+    public ResponseEntity<List<CalenderResponseDto>> findAll() {
+        List<CalenderResponseDto> calenderResponseDtoList = calenderService.findAll();
+
+        return new ResponseEntity<>(calenderResponseDtoList, HttpStatus.OK);
+    }
 }

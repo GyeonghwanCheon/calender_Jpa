@@ -31,7 +31,7 @@ public class CalenderResponseDto {
         this.modifiedAt = modifiedAt;
     }
 
-//    public static CalenderResponseDto toDto(Calender calender) {
-//        return new CalenderResponseDto(calender.getId(), calender.getUsername(), calender.getTitle(), calender.getContents(), calender.getCreateAt(), calender.getModifiedAt());
-//    }
+    public static CalenderResponseDto toDto(Calender calender) {
+        return new CalenderResponseDto(calender.getId(), calender.getUsername(), calender.getTitle(), calender.getContents(), calender.getCreateAt(), calender.getModifiedAt());
+    }
 }

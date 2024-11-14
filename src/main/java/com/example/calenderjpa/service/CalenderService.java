@@ -27,9 +27,9 @@ public class CalenderService {
         );
     }
 
-//    public List<CalenderResponseDto> findAll() {
-//        return calenderRepository.findAll().stream().map(CalenderResponseDto::toDto).toList();
-//    }
+    public List<CalenderResponseDto> findAll() {
+        return calenderRepository.findAll().stream().map(CalenderResponseDto::toDto).toList();
+    }
 
     
 
