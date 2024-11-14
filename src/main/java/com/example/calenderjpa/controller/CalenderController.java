@@ -1,8 +1,8 @@
 package com.example.calenderjpa.controller;
 
 
-import com.example.calenderjpa.dto.CalenderRequestDto;
-import com.example.calenderjpa.dto.CalenderResponseDto;
+import com.example.calenderjpa.dto.calenderdto.CalenderRequestDto;
+import com.example.calenderjpa.dto.calenderdto.CalenderResponseDto;
 import com.example.calenderjpa.service.CalenderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

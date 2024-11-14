@@ -1,4 +1,4 @@
-package com.example.calenderjpa.dto;
+package com.example.calenderjpa.dto.calenderdto;
 
 import com.example.calenderjpa.entity.Calender;
 import lombok.Getter;
