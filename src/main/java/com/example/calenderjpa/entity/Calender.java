@@ -27,6 +27,11 @@ public class Calender extends BaseEntity{
         this.title = title;
     }
 
+    public void updateCalender(String title, String contents) {
+        this.title = title;
+        this.contents = contents;
+    }
+
     public Calender() {
 
     }

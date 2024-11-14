@@ -42,4 +42,15 @@ public class CalenderController {
 
         return new ResponseEntity<>(calenderResponseDto, HttpStatus.OK);
     }
+
+    //일정 수정
+    @PatchMapping("/{id}")
+    public ResponseEntity<Void> updateCalender(@PathVariable Long id, @RequestBody CalenderRequestDto requestDto) {
+
+        calenderService.updateCalender(id, requestDto.getTitle(), requestDto.getContents());
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+
 }

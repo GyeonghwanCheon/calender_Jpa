@@ -4,7 +4,10 @@ import com.example.calenderjpa.dto.CalenderResponseDto;
 import com.example.calenderjpa.entity.Calender;
 import com.example.calenderjpa.repository.CalenderRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -38,5 +41,19 @@ public class CalenderService {
         return new CalenderResponseDto(
                 findCalender.getId() ,findCalender.getUsername(), findCalender.getTitle(),
                 findCalender.getContents(), findCalender.getCreateAt(), findCalender.getModifiedAt());
+    }
+
+
+    @Transactional
+    public void updateCalender(Long id, String title, String contents) {
+
+        Calender findCalender = calenderRepository.findByIdOrElseThrow(id);
+
+        if(findCalender.getId() == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Dose not exist id =" + id);
+        }
+
+        findCalender.updateCalender(title, contents);
+
     }
 }
