@@ -5,8 +5,11 @@ import com.example.calenderjpa.entity.Calender;
 import com.example.calenderjpa.repository.CalenderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
@@ -60,6 +63,13 @@ public class CalenderService {
         }
 
         findCalender.updateCalender(title, contents);
+    }
 
+    // 선택 일정 삭제
+    public void delete(Long id) {
+
+        Calender findCalender = calenderRepository.findByIdOrElseThrow(id);
+
+        calenderRepository.delete(findCalender);
     }
 }

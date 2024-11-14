@@ -52,5 +52,13 @@ public class CalenderController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    // 선택 일정 삭제
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        calenderService.delete(id);
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 
 }
