@@ -30,11 +30,13 @@ public class CalenderService {
         );
     }
 
+    // 일정 전체 조회
     public List<CalenderResponseDto> findAll() {
         return calenderRepository.findAll().stream().map(CalenderResponseDto::toDto).toList();
     }
 
 
+    // 일정 단건 조회
     public CalenderResponseDto findById(Long id) {
         Calender findCalender = calenderRepository.findByIdOrElseThrow(id);
 
@@ -43,7 +45,7 @@ public class CalenderService {
                 findCalender.getContents(), findCalender.getCreateAt(), findCalender.getModifiedAt());
     }
 
-
+    // 일정 수정(제목과 내용만 수정)
     @Transactional
     public void updateCalender(Long id, String title, String contents) {
 
@@ -51,6 +53,10 @@ public class CalenderService {
 
         if(findCalender.getId() == null) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Dose not exist id =" + id);
+        }
+
+        if(title == null || contents == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "There is no title or content.");
         }
 
         findCalender.updateCalender(title, contents);
