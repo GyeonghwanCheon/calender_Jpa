@@ -55,28 +55,28 @@ public class CalenderService {
                 findCalender.getContents(), findCalender.getCreateAt(), findCalender.getModifiedAt());
     }
 
-//    // 일정 수정(제목과 내용만 수정)
-//    @Transactional
-//    public void updateCalender(Long id, String title, String contents) {
-//
-//        Calender findCalender = calenderRepository.findByIdOrElseThrow(id);
-//
-//        if(findCalender.getId() == null) {
-//            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Dose not exist id =" + id);
-//        }
-//
-//        if(title == null || contents == null) {
-//            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "There is no title or content.");
-//        }
-//
-//        findCalender.updateCalender(title, contents);
-//    }
-//
-//    // 선택 일정 삭제
-//    public void delete(Long id) {
-//
-//        Calender findCalender = calenderRepository.findByIdOrElseThrow(id);
-//
-//        calenderRepository.delete(findCalender);
-//    }
+    // 일정 수정(제목과 내용만 수정)
+    @Transactional
+    public void updateCalender(Long id, String title, String contents) {
+
+        Calender findCalender = calenderRepository.findByIdOrElseThrow(id);
+
+        if(findCalender.getId() == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Dose not exist id =" + id);
+        }
+
+        if(title == null || contents == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "There is no title or content.");
+        }
+
+        findCalender.updateCalender(title, contents);
+    }
+
+    // 선택 일정 삭제
+    public void delete(Long id) {
+
+        Calender findCalender = calenderRepository.findByIdOrElseThrow(id);
+
+        calenderRepository.delete(findCalender);
+    }
 }

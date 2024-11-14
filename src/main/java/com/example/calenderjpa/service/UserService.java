@@ -19,13 +19,13 @@ public class UserService {
     private final UserRepository userRepository;
 
     // 유저 생성
-    public SignUpResponseDto signUp(String username, String email) {
+    public SignUpResponseDto signUp(String username,String password ,String email) {
 
-        User user = new User(username,email);
+        User user = new User(username, password ,email);
 
         User savedUser  = userRepository.save(user);
 
-        return new SignUpResponseDto(savedUser.getId(), savedUser.getUsername(), savedUser.getEmail());
+        return new SignUpResponseDto(savedUser.getId(), savedUser.getUsername() ,savedUser.getEmail());
     }
 
     public UserResopnseDto findById(Long id) {
