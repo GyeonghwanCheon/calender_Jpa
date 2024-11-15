@@ -273,3 +273,64 @@
 ## SQL
 ![SQL_IMAGE](https://github.com/user-attachments/assets/2d4207e5-4a06-45ea-b7d2-9cb5507ec7d1)
 ![SQL_IMAGE2](https://github.com/user-attachments/assets/14005003-e696-4ee4-91da-1ebf0e4ad3e5)
+
+
+
+
+
+
+---
+
+
+
+
+
+
+## 1.프로젝트명 : Calender_JPA (일정 관리 앱)
+
+---
+
+## 2.프로젝트 설명
++ 유저를 생성, 조회, 삭제하며 일정을 작성하고 저장하고 수정, 삭제할 수 있는 일정 관리 프로그램
+  + Lv_1 기능
+    + 일정을 배열 형식으로 저장.
+    + 일정 전체 조회
+    + 일정 단건 조회
+    + 작성자와 내용 수정 가능 (먼저 입력한 비밀번호가 일치해야 수정 가능)
+    + 일정 삭제 가능 (먼저 입력한 비밀번호가 일치해야 수정 가능)
+  + Lv_2 기능
+    + 유저를 생성하여 배열 형식으로 저장
+    + 유저 이름이 다르면 일정 생성 불가
+    + 유저 단건 조회
+    + 유저 전체 조회
+    + 유저 삭제
+    + 유저 생성 시 비밀번호 추가.
+
+
+---
+
+## 3.프로젝트 설치 및 실행 방법
++ JAVA IDEA 프로그램 설치, JAVA 설치
++ Spring IDEA 프로그램 설치
++ mysql DB 설치
++ postman 사용
++ 코드 클론 후 사용
+
+---
+   
+## 4.프로젝트 사용 방법
++ 개인 DB 설정
++ 프로그램 실행 후 서버가 정상적으로 작동하는 지 확인
++ postman을 통해 URL 및 JSON 작성
+
+---
+
+## 5.참고자료
++ https://devmango.tistory.com/202
++ https://velog.io/@314_dev/Spring-Cookie-Session
++ https://innovation123.tistory.com/57
++ https://velog.io/@gmtmoney2357/%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EC%BF%A0%ED%82%A4-%EC%84%B8%EC%85%98
+
+---
+
++ Version : 1.0
