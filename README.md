@@ -263,3 +263,13 @@
 
 
 ---
+
+## ERD
+![ERD_IMAGE](https://github.com/user-attachments/assets/86cc05a9-990c-48aa-84d8-84b8c004cc61) 
+
+
+---
+
+## SQL
+![SQL_IMAGE](https://github.com/user-attachments/assets/2d4207e5-4a06-45ea-b7d2-9cb5507ec7d1)
+![SQL_IMAGE2](https://github.com/user-attachments/assets/14005003-e696-4ee4-91da-1ebf0e4ad3e5)
